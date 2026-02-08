@@ -34,7 +34,7 @@ fi
 ##### BASE #####
 echo "Installing base..."
 sudo pacman --needed --noconfirm -S base-devel curl wget unzip dosfstools vi less figlet libzip \
-    tree imagemagick bluez bluez-utils mpv transmission-cli ueberzugpp
+    tree imagemagick bluez bluez-utils mpv transmission-cli ueberzugpp fastfetch
 echo " base installed!"
 
 cd ~
