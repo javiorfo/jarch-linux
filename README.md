@@ -1,4 +1,4 @@
-# cask-strength-linux
+# jarch-linux
 *Personal post-install script for Arch Linux. High-performance, lightweight and pure*
 
 ## Caveats
@@ -6,9 +6,9 @@
 
 ## Installation
 ```bash
-git clone https://github.com/javiorfo/cask-strength-linux
-cd cask-strength-linux
-./csinstall.sh
+git clone https://github.com/javiorfo/jarch-linux
+cd jarch-linux
+./jarchinstall.sh
 ```
 
 ---
