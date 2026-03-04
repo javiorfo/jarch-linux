@@ -39,13 +39,15 @@ echo " base installed!"
 
 cd ~
 
+# TODO lf
+
 ##### WINDOW MANAGER #####
 while true; do
     echo "---------------------------"
     echo "    Window Manager Menu"
     echo "---------------------------"
     echo "1) Install DWM (Xorg)"
-    echo "2) Install Niri (Wayland)"
+    echo "2) Install Sway (Wayland)"
     echo "3) Quit"
     
     read -p "Enter choice [1-3]: " choice
@@ -87,29 +89,17 @@ while true; do
             break
             ;;
         2)
-            sudo pacman --needed --noconfirm -S niri waybar fuzzel swaybg swayidle swayimg wl-clipboard yazi \
-                ripgrep wf-recorder slurp xwayland-satellite xdg-desktop-portal-gtk xdg-desktop-portal-gnome alacritty \
-                rustup rust-analyzer
-            echo " Niri installed!"
+            sudo pacman --needed --noconfirm -S sway waybar fuzzel swaybg swayidle swayimg wl-clipboard \
+                wf-recorder slurp xwayland-satellite xdg-desktop-portal-gtk xdg-desktop-portal-gnome foot
+            echo " Sway installed!"
 
-            echo "Configuring Rust..."
-            rustup default stable
-            echo " Rust configured!"
-            
-            echo "Setting yazi config..."
-            mkdir -p .config/yazi
-            wget https://raw.githubusercontent.com/javiorfo/dotfiles/master/.config/yazi/theme.toml
-            wget https://raw.githubusercontent.com/javiorfo/dotfiles/master/.config/yazi/yazi.toml
-            mv theme.toml yazi.toml .config/yazi
-            echo " yazi configured!"
-
-            echo "Setting niri config..."
+            echo "Setting Sway config..."
             mkdir -p .config/niri/scripts
-            wget https://raw.githubusercontent.com/javiorfo/dotfiles/master/.config/niri/scripts/idle.sh
-            wget https://raw.githubusercontent.com/javiorfo/dotfiles/master/.config/niri/config.kdl
-            mv idle.sh .config/niri/scripts
-            mv config.kdl .config/niri
-            echo " niri configured!"
+            wget https://raw.githubusercontent.com/javiorfo/dotfiles/master/.config/sway/scripts/idle.sh
+            wget https://raw.githubusercontent.com/javiorfo/dotfiles/master/.config/sway/config
+            mv idle.sh .config/sway/scripts
+            mv config .config/sway
+            echo " Sway configured!"
 
             echo "Setting waybar config..."
             mkdir -p .config/waybar
@@ -124,11 +114,11 @@ while true; do
             mv fuzzel.ini .config/fuzzel
             echo " fuzzel configured!"
   
-            echo "Setting alacritty config..."
-            mkdir -p .config/alacritty
-            wget https://raw.githubusercontent.com/javiorfo/dotfiles/master/.config/alacritty/alacritty.toml
-            mv alacritty.toml .config/alacritty/
-            echo " alacritty configured!"
+            echo "Setting foot config..."
+            mkdir -p .config/foot
+            wget https://raw.githubusercontent.com/javiorfo/dotfiles/master/.config/foot/foot.ini
+            mv foot.ini .config/foot/
+            echo " foot configured!"
 
             echo "Installing config files..."
             rm .bash_profile
