@@ -34,7 +34,7 @@ fi
 ##### BASE #####
 echo "Installing base..."
 sudo pacman --needed --noconfirm -S base-devel curl wget unzip dosfstools vi less figlet libzip \
-    tree imagemagick bluez bluez-utils mpv transmission-cli ueberzugpp fastfetch impala
+    tree imagemagick bluez bluez-utils mpv transmission-cli ueberzugpp fastfetch impala ripgrep
 echo " base installed!"
 
 cd ~
@@ -172,7 +172,7 @@ echo " yay installed!"
 
 ##### AUR #####
 echo "Installing programs from AUR..."
-paru --noconfirm -S jdtls slides lombok-common java-debug librewolf-bin passcualito xautolock gativideo
+paru --noconfirm -S jdtls slides lombok-common java-debug librewolf-bin passcualito xautolock yts-cli undr jwtd
 echo " AUR software installed!"
 ##### END #####
 
